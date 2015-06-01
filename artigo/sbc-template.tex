@@ -3,10 +3,12 @@
 \usepackage{sbc-template}
 
 \usepackage{graphicx,url}
+\usepackage{amsmath}
+\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc} 
+\usepackage[portuguese, ruled, linesnumbered]{algorithm}
 
-%\usepackage[brazil]{babel}   
-\usepackage[latin1]{inputenc}  
-
+\usepackage{algorithmic}
      
 \sloppy
 
@@ -15,14 +17,14 @@
 \author{Ariel F. Azevedo\inst{1}, Rodrigo Acosta. *\inst{2}, Rodrigo Duarte \inst{1}}
 
 
-\address{\textit{Laboratory of Ubiquitous and Parallel Systems} (LUPS) -- Universidade Federal de Pelotas (UFPel)
+\address{\textit{Laboratory of Ubiquitous and Parallel Systems} (LUPS) - \\ Universidade Federal de Pelotas (UFPel)
 \nextinstitute
-  Centro de Desenvolvimento Tecnológico - Faculdade de Ciência da Computação
+  Centro de Desenvolvimento Tecnológico - \\Faculdade de Ciência da Computação
   Universidade Federal de Pelotas (UFPel)
   \email{\{afazevedo,rmduarte, rdbacosta\}@inf.ufpel.edu.br
   }
 }
-
+\graphicspath{{figuras/}}
 \begin{document} 
 
 \maketitle
@@ -55,17 +57,107 @@
   abordado e as soluções tentadas, Resultados onde serão apresentados alguns dos resultados obtidos nos testes realizados e por fim, mas não menos importante a Conclusão, 
   onde será então discutido o desfecho do artigo e conclusão do grupo sobre o trabalho e resultados obtidos.
 
-\section{O Problema} \label{sec:problem}
+\section{Problema}
+  A teoria fractal tem sua origem na descoberta do matemático alemão Karl Weierstrass que
+encontrou uma função com a propriedade de ser contínua em todo seu domínio, mas em
+nenhum ponto diferenciável. As plotagens dessas funções eram difíceis, pois elas são
+recursivas, então o trabalho manual era praticamente impossível. Com o advento do
+computador o professor Benoît Mandelbrot foi o primeiro a utilizar a máquina para plotar a
+função recursiva estudada por Pierre Fatou, hoje chamada de Conjunto de Mandelbrot ou
+simplesmente Fractal de Mandelbrot.
 
-  Durante séculos, os objetos e os conceitos da filosofia e da geometria euclidiana foram considerados como os que melhor descreviam o mundo em que vivemos.
-  A descoberta de geometrias não-euclidianas introduziu novos objetos que representam certos fenômenos do Universo, tal como se passou com os fractais.
-  Assim, considera-se hoje que tais objetos retratam formas e fenômenos da Natureza.
+O conjunto de Mandelbrot é definido como o conjunto específico de pontos do plano complexo de Argand-Gauss que obedecem a distância máxima de 2 da origem do plano,
+isto é, \textquotedblleft não tendem ao infinito\textquotedblright  para a sequência definida pela recorrência do número complexo  $Z = x+yi$.
+ $Z_{0} = 0$
 
-  Fractal pela definição é um padrão que nunca acaba, ou seja, infinito. Um fractal também é um padrão infinitamente complexo e auto-similar através de diferentes escalas.
-  Eles são criados , repetindo um processo simples repetidamente em um loop de feedback contínuo
+ $Z_{n+1} = Z_{N}^2 + C$
+
+Onde $Z0$ e $Z_{n+1}$ são iterações n e n+1 do número complexo Z, e $C = a + bi$ fornece a posição de um ponto do plano complexo.
+Já a parte real e imaginária do complexo Z pode ser desenvolvida até encontrarmos $_{n+1} = x_{n}^2 - y_{n}^2 + a$ e $y_{n+1} = 2x_{n}y_{n} + b$.
+Para calcular os pontos de fractal pode-se utilizar o seguinte algoritmo:\\ \\ \\
+\begin{algorithm}[H]
+   \SetAlgoLined
+   int Mandelbrot(Complexo c)
+   
+   int i = 0, ITR = 255;
+   
+   float x = 0, y = 0 tmp = 0;
+   
+   enquanto($x^2+y^2 <= 2^2$ \&\& $i < ITR$)
+   
+    $tmp = x^2 - y^2 + c.real$;\\
+    $y = 2*x*y + c.img$; \\
+    $i$++;
+    
+    se($i < ITR$) \Retorna{$i$};
+    senão \Retorna{0};
+   \label{alg1}
+   \caption{\textsc{Algoritmo de Mandelbrot}}
+ \end{algorithm}
+
+ 
+ 
+ A geração da imagem de um fractal dependerá da quantidade de pontos no domínio,
+neste caso distância máxima de 2 da origem, e o número máximo de iterações para
+determinar se o ponto pertence ou não ao conjunto. Para se obter resoluções aceitáveis, isto
+é, imagens onde é possível observar o padrão de similaridade multi-escala, imagens com
+resolução maiores que 1200x1200 devem ser utilizadas. Desta forma temos um problema
+que exige uma grande quantidade de operações em função da resolução do fractal que se
+deseja obter. A figura \ref{fig:exampleFig1} mostra um exemplo de fractal.
+
+\begin{figure}
+  \centering
+  \includegraphics{Fractal1.png}
+  \caption{Fractal}
+  \label{fig:exampleFig1} 
+\end{figure}
+
+
+
+Tendo isto em vista, utilizamos de programação paralela para tentar reduzir o problema fazendo com que ele seja feito de forma concorrente.
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+
+
+
+
+
+
+
+
+
+
+
 \section{Conceitos}
+Nesta sessão será então abordado os principais conceitos utilizados ao longo deste artigo, com um objetivo principal de informar o leitor.
+Ao decorrer desta sessão espera-se o entendimento básico de tais conceitos para então na próxima sessão começar a especificar o trabalho em si.
+
+Esta sessão está divida em 4 (quatro) subsessões, são estas: Programação Sequencial, Programação Concorrente, C++11 e OpenMP.
+Seguimos então para a subsessão 1.
+\subsection{Programação Sequencial}
+Programação Sequencial (\textit{Top Down}) é aquiela que é executada sequencialmente, da primeira a última linha de código,
+seguindo rigorosamente a ordem em que o programa foi escrito \cite{Cormen}.A figura \ref{fig:exampleFig2} ilustra este processo, onde um determinado problema é executado
+sequencialmente, possuindo assim uma série de instruções que devem ser executadas em um único processador.
+
+\begin{figure}
+ \centering
+ \includegraphics{sequencial.png}
+ \caption{Programação Sequencial}
+ \label{fig:exampleFig2}
+\end{figure}
+
+
 \subsection{Programação Paralela}
-\subsection{Programação Concorrente}
+Um programa é considerado paralelo quando este é visto como um conjunto de partes que podem ser resolvidas concorrentemente \cite{Cormen}.
+Cada parte é igualmente constituída por uma série de instruções sequenciais, mas que no seu conjunto podem ser executadas simultaneamente em vários processadores,
+conforme ilustra a Figura \ref{fig:exampleFig3}.
+
+\begin{figure}
+ \centering
+ \includegraphics{paralelo.png}
+ \caption{Programação Paralela}
+ \label{exampleFig3}
+\end{figure}
+
 \subsection{C++11}
 \subsection{openmp}
 
