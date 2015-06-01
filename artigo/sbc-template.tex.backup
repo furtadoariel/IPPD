@@ -48,9 +48,9 @@
   solucionarem determinados problemas e, também, a necessidade de resolver problemas mais complexos de maior dimensão.\cite{Andrews}.
   Inicialmente, motivada pela resolução de problemas com grande relevância científica e econômica, denominados Grand Challenge Problems(GCPs) .\cite{Stout}
   iniciou-se a utilização de técnicas de processamento paralelo e distribuído.Atualmente, diversas aplicações exigem ou requerem um alto poder  
-  de computação,para desta forma,efetuar o processamento de grandes quantidades de informações.O presente artigo busca demonstrar a aplicação de um problema sendo resolvido com
-  o uso de programação paralela.Apesar de ser apenas uma avaliação para um problema que, de certa forma, demanda menor quantidade de processamento que os problemas complexos que temos
-  atualmente, e que faze uso de programação paralela, como por exemplo, análise de fenômenos climáticos (movimento das placas tectônicas), físicos (órbita dos planetas), 
+  de computação,para desta forma,efetuar o processamento de grandes quantidades de informações. O presente artigo busca demonstrar a aplicação de um problema sendo resolvido com
+  o uso de programação paralela. Apesar de ser apenas uma avaliação para um problema que, de certa forma, demanda menor quantidade de processamento que os problemas complexos que temos
+  atualmente, e que fazem uso de programação paralela, como por exemplo, análise de fenômenos climáticos (movimento das placas tectônicas), físicos (órbita dos planetas), 
   químicos (reações  nucleares), dentre outros tantos.
   Este artigo tem como objetivo então tratar sobre a implementação de fractais utilizando as ferramentas C++11 e OpenMP, e está dividido nas seguintes sessões: Introdução, O Problema, onde será abordado um pouco sobre que é Fractal e suas características, Conceitos, onde será 
   falado sobre os principais conceitos abordados pelo artigo, para melhor entendimento da parte do leitor, Metodologia, onde será descrito a forma como o problema foi 
@@ -185,7 +185,14 @@ Conforme especificado na sessão \ref{sec:Intro}, este trabalho foi realizado uti
 desenvolvido nas ferramentas C++11, OpenMP e com programação sequencial.
 Salvo a programação sequencial, ambas as outras ferramentas utilizaram de um número de threads entre um e oito, executados dez (10) vezes com cada número de threads.
 Ou seja, para um teste com uma (1) thread, foram realizados dez (10) testes, e assim sucessivamente até os dez testes com oito threads.
-A máquina 
+A máquina utilizada para realizar todos os testes, foi a seguinte:
+CPU:Amd Phenon X6 1055T 2.8Ghz, 6 Pocessadores, 6M cache L3, 512K cache L2, 64K cache L1, mem Ram: 8G DDR3 1066.
+Foi calculado o \textit{Speed Up} através da seguinte formula:
+
+$Speedup = \frac{X}{Y}$
+
+Onde X é o tempo sequencial, e Y é o tempo paralelo, para definir o tempo médio de execução.
+Assim então seguimos para a sessão \ref{sec:Results}.
 \section{Resultados}\label{sec:Results}
 
 
