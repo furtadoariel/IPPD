@@ -7,9 +7,10 @@ Warning--I didn't find a database entry for "Dongarra"
 Warning--I didn't find a database entry for "Andrews"
 Warning--I didn't find a database entry for "Stout"
 Warning--I didn't find a database entry for "Cormen"
+Warning--I didn't find a database entry for "openmp"
 You've used 0 entries,
             1935 wiz_defined-function locations,
-            478 strings with 3724 characters,
+            479 strings with 3730 characters,
 and the built_in function-call counts, 17 in all, are:
 = -- 0
 > -- 0
@@ -48,4 +49,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 2
-(There were 4 warnings)
+(There were 5 warnings)

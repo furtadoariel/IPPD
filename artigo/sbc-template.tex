@@ -41,7 +41,7 @@
 \end{resumo}
 
 
-\section{Introdução}
+\section{Introdução}\label{sec:Intro}
   O uso de ambientes de programação paralela e distribuída tem sido recorrente para a execução de aplicações que exijam
   uma significativa capacidade de processamento de dados .\cite{Dongarra}.
   Dentre os principais motivos para utilização de programação paralela, pode-se citar a importância de reduzir o tempo necessários para as aplicações  
@@ -52,12 +52,12 @@
   o uso de programação paralela.Apesar de ser apenas uma avaliação para um problema que, de certa forma, demanda menor quantidade de processamento que os problemas complexos que temos
   atualmente, e que faze uso de programação paralela, como por exemplo, análise de fenômenos climáticos (movimento das placas tectônicas), físicos (órbita dos planetas), 
   químicos (reações  nucleares), dentre outros tantos.
-  Este artigo está dividido nas seguintes sessões: Introdução, O Problema, onde será abordado um pouco sobre que é Fractal e suas características, Conceitos, onde será 
+  Este artigo tem como objetivo então tratar sobre a implementação de fractais utilizando as ferramentas C++11 e OpenMP, e está dividido nas seguintes sessões: Introdução, O Problema, onde será abordado um pouco sobre que é Fractal e suas características, Conceitos, onde será 
   falado sobre os principais conceitos abordados pelo artigo, para melhor entendimento da parte do leitor, Metodologia, onde será descrito a forma como o problema foi 
   abordado e as soluções tentadas, Resultados onde serão apresentados alguns dos resultados obtidos nos testes realizados e por fim, mas não menos importante a Conclusão, 
   onde será então discutido o desfecho do artigo e conclusão do grupo sobre o trabalho e resultados obtidos.
 
-\section{Problema}
+\section{Problema}\label{sec:Problem}
   A teoria fractal tem sua origem na descoberta do matemático alemão Karl Weierstrass que
 encontrou uma função com a propriedade de ser contínua em todo seu domínio, mas em
 nenhum ponto diferenciável. As plotagens dessas funções eram difíceis, pois elas são
@@ -127,7 +127,7 @@ Tendo isto em vista, utilizamos de programação paralela para tentar reduzir o pr
 
 
 
-\section{Conceitos}
+\section{Conceitos}\label{sec:Conc}
 Nesta sessão será então abordado os principais conceitos utilizados ao longo deste artigo, com um objetivo principal de informar o leitor.
 Ao decorrer desta sessão espera-se o entendimento básico de tais conceitos para então na próxima sessão começar a especificar o trabalho em si.
 
@@ -159,14 +159,36 @@ conforme ilustra a Figura \ref{fig:exampleFig3}.
 \end{figure}
 
 \subsection{C++11}
+C++11, formalmente conhecido por C++0x, é uma versão da linguagem de programação padrão C++.
+Foi aprovado pela ISO em 2011, substituindo C++03 e suplantado pelo C++14 em 2014. O nome segue a tradição de nomear de acordo com o ano de publicação
+da especificação da linguagem.
+Essa versão inclue várias mudanças ao núcleo da linguagem e extende a biblioteca padrão do C++.
+Algumas das principais mudanças são:
+\begin{itemize}
+
+ \item Manter a estabilidade e compatibilidade com C++98 e possivelmente com C.
+ \item Melhorar C++ para facilitar Desenvolvimento de sistemas e bibliotecas, em vez de introduzir novas características úteis apenas para aplicações específicas.
+ \item Fornecer soluções adequadas para os problemas do mundo real.
+ \item Aumenta o desempenho e a capacidade de trabalhar diretamente com hardware.
+ \item Entre outras.
+\end{itemize}
+
 \subsection{openmp}
+OpenMP é uma interface de programação (API), portável, baseada na modelo de programação paralela de memória compartilhada para arquiteturas de múltiplos 
+processadores. \cite{openmp} Basicamente é composto por três componentes básicos: diretivas de compilação, biblioteca de execução e variáveis de ambiente. 
+Sua principal facilidade é a existência de um único espaço de endereçamento através de todo o sistema de memória, onde cada processador pode ler e escrever 
+em uma ou todas posições de memória. O OpenMP está disponível para uso com os compiladores C/C++ e Fortran, podendo ser executado em ambientes Unix e Windows 
+(Sistemas Multithreads) e foi definido (e é mantido), por um grupo composto na maioria por empresas de hardware e software, denominado como 
+OpenMP ARb (Architecture Review Board), que possui diversas empresas, dentre elas: Intel, Copmaq, Sun Microsystems, dentre outras.
+\section{Metodologia}\label{sec:Methodology}
+Conforme especificado na sessão \ref{sec:Intro}, este trabalho foi realizado utilizando o algoritmo de Mandelbrot para problemas de Fractais, o qual foi
+desenvolvido nas ferramentas C++11, OpenMP e com programação sequencial.
+Salvo a programação sequencial, ambas as outras ferramentas utilizaram de um número de threads entre um e oito, executados dez (10) vezes com cada número de threads.
+Ou seja, para um teste com uma (1) thread, foram realizados dez (10) testes, e assim sucessivamente até os dez testes com oito threads.
+\section{Resultados}\label{sec:Results}
 
-\section{Metodologia}\label{sec:methodology}
 
-\section{Resultados}
-
-
-\section{Conclusão}
+\section{Conclusão}\label{sec:Conclusion}
 
 
 \bibliographystyle{sbc}
