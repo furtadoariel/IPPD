@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.6.1)  1 JUN 2015 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.6.1)  1 JUN 2015 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,17 +399,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 34.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
-
-
-LaTeX Warning: Citation `Dongarra' on page 1 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Andrews' on page 1 undefined on input line 48.
-
-
-LaTeX Warning: Citation `Stout' on page 1 undefined on input line 49.
-
-[1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -492,11 +482,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
-[2]
-
-LaTeX Warning: Citation `Cormen' on page 3 undefined on input line 138.
-
-<figuras/sequencial.png, id=20, 478.03593pt x 200.24812pt>
+[2] <figuras/sequencial.png, id=20, 478.03593pt x 200.24812pt>
 File: figuras/sequencial.png Graphic file (type png)
 
 <use figuras/sequencial.png>
@@ -506,13 +492,6 @@ Package pdftex.def Info: figuras/sequencial.png used on input line 143.
 Overfull \hbox (51.24341pt too wide) in paragraph at lines 143--144
  [][] 
  []
-
-
-LaTeX Warning: Citation `Cormen' on page 3 undefined on input line 150.
-
-
-LaTeX Warning: Reference `fig:exampleFig3' on page 3 undefined on input line 15
-2.
 
 <figuras/paralelo.png, id=21, 475.7775pt x 204.01219pt>
 File: figuras/paralelo.png Graphic file (type png)
@@ -535,41 +514,36 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
 
-
-LaTeX Warning: Citation `openmp' on page 5 undefined on input line 178.
-
 (./sbc-template.bbl
+Underfull \hbox (badness 1742) in paragraph at lines 19--22
+[]\OT1/ptm/m/n/12 OPENMP (2013).  Sim-ple, por-ta-ble, sca-la-ble smp pro-gram-
+ming.  $\OT1/pcr/m/n/12 https : / /
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [5] (./sbc-template.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[5]) [6] (./sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 5312 strings out of 494955
- 72466 string characters out of 6179475
- 172545 words of memory out of 5000000
- 8435 multiletter control sequences out of 15000+600000
- 25057 words of font info for 51 fonts, out of 8000000 for 9000
+ 5318 strings out of 494955
+ 72545 string characters out of 6179475
+ 172652 words of memory out of 5000000
+ 8440 multiletter control sequences out of 15000+600000
+ 25572 words of font info for 53 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
  38i,10n,28p,305b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/couri
-er/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (5 pages, 1664613 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on sbc-template.pdf (6 pages, 1667350 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

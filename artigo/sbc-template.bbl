@@ -1,3 +1,35 @@
 \begin{thebibliography}{}
 
+\bibitem[ANDREWS 2001]{Andrews}
+ANDREWS, G.~R. (2001).
+\newblock Foundations of multithreaded, parallel, and distributed programming.
+\newblock page 664p. Addison-Wesley.
+
+\bibitem[Cormen et~al. 1990]{Cormen}
+Cormen, T., Leiserson, C., and Rivest, R. (1990).
+\newblock McGraw-Hill.
+
+\bibitem[DONGARRA et~al. 2002]{Dongarra}
+DONGARRA, J., FOSTER, I., FOX, G., GROPP, W., KENNEDY, K., TORCZON, L., and
+  WHITE, A. (2002).
+\newblock {\em (Ed.). The Sourcebook of Parallel Computing.}
+\newblock [S.l.]: Elsevier.
+
+\bibitem[OPENMP 2013]{OpenMP:2013}
+OPENMP (2013).
+\newblock Simple, portable, scalable smp programming.
+\newblock \url{https://computing.llnl.gov/tutorials/openMP/}.
+
+\bibitem[OPENMP 2014]{OpenMP:2014}
+OPENMP (2014).
+\newblock The openmp api specification for parallel programming.
+\newblock \url{http://openmp.org/wp/}.
+
+\bibitem[Stout et~al. 1998]{Stout}
+Stout, Q.~F., De~Zeeuw, D.~L., Gombosi, T.~I., Groth, C. P.~T., Marshall,
+  H.~G., and Powell, K.~G. (1998).
+\newblock Adaptive parallel computation of a grand-challenge problem:
+  prediction of the path of a solar-corona mass ejection.
+\newblock In Proceedings of the 1998 ACM/IEEE conference on Supercomputing.
+
 \end{thebibliography}

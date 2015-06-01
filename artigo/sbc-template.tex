@@ -155,7 +155,7 @@ conforme ilustra a Figura \ref{fig:exampleFig3}.
  \centering
  \includegraphics{paralelo.png}
  \caption{Programação Paralela}
- \label{exampleFig3}
+ \label{fig:exampleFig3}
 \end{figure}
 
 \subsection{C++11}
@@ -175,9 +175,9 @@ Algumas das principais mudanças são:
 
 \subsection{openmp}
 OpenMP é uma interface de programação (API), portável, baseada na modelo de programação paralela de memória compartilhada para arquiteturas de múltiplos 
-processadores. \cite{openmp} Basicamente é composto por três componentes básicos: diretivas de compilação, biblioteca de execução e variáveis de ambiente. 
+processadores. \cite{OpenMP:2014} Basicamente é composto por três componentes básicos: diretivas de compilação, biblioteca de execução e variáveis de ambiente. 
 Sua principal facilidade é a existência de um único espaço de endereçamento através de todo o sistema de memória, onde cada processador pode ler e escrever 
-em uma ou todas posições de memória. O OpenMP está disponível para uso com os compiladores C/C++ e Fortran, podendo ser executado em ambientes Unix e Windows 
+em uma ou todas posições de memória. \cite{OpenMP:2013} O OpenMP está disponível para uso com os compiladores C/C++ e Fortran, podendo ser executado em ambientes Unix e Windows 
 (Sistemas Multithreads) e foi definido (e é mantido), por um grupo composto na maioria por empresas de hardware e software, denominado como 
 OpenMP ARb (Architecture Review Board), que possui diversas empresas, dentre elas: Intel, Copmaq, Sun Microsystems, dentre outras.
 \section{Metodologia}\label{sec:Methodology}
@@ -185,6 +185,7 @@ Conforme especificado na sessão \ref{sec:Intro}, este trabalho foi realizado uti
 desenvolvido nas ferramentas C++11, OpenMP e com programação sequencial.
 Salvo a programação sequencial, ambas as outras ferramentas utilizaram de um número de threads entre um e oito, executados dez (10) vezes com cada número de threads.
 Ou seja, para um teste com uma (1) thread, foram realizados dez (10) testes, e assim sucessivamente até os dez testes com oito threads.
+A máquina 
 \section{Resultados}\label{sec:Results}
 
 
