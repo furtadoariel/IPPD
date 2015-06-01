@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc}  
+
+     
+\sloppy
+
+\title{Ánalise de Aplicação de Programação Paralela Através de Estudos de Casos em Implementações em Problemas de Fractais}
+
+\author{Ariel F. Azevedo\inst{1}, Rodrigo Acosta. *\inst{2}, Rodrigo Duarte \inst{1}}
+
+
+\address{\textit{Laboratory of Ubiquitous and Parallel Systems} (LUPS) -- Universidade Federal de Pelotas (UFPel)
+\nextinstitute
+  Centro de Desenvolvimento Tecnológico - Faculdade de Ciência da Computação
+  Universidade Federal de Pelotas (UFPel)
+  \email{\{afazevedo,rmduarte, rdbacosta\}@inf.ufpel.edu.br
+  }
+}
+
+\begin{document} 
+
+\maketitle
+
+
+     
+\begin{resumo} 
+  Este artigo tem como objetivo apresentar uma solução para o problema de fractal (\textit{fractus} do latim, fração, quebrado) de forma paralela nas linguagens C++11 e OpenMP, 
+  bem como uma abordagem sequencial para mostrar a diferença e importância de casos paralelisados.
+  
+  Este artigo será composto de uma sessão de introdução para apresentar o problema em si, logo depois serão apresentadas ideias e soluçãos, e por fim 
+  resultados obtidos ao longo do trabalho. E após isso, conclusões serão debatidas.
+  
+\end{resumo}
+
+
+\section{Introdução}
+  O uso de ambientes de programação paralela  e  distribuída  tem  sido  recorrente  para  a execução  de  aplicações  que  exijam
+  uma  significativa  capacidade  de  processamento  de dados .\cite{Dongarra}.
+  Dentre  os  principais  motivos  para  utilização  de programação  paralela,  pode-se  citar a  importância de  reduzir  o  tempo  necessários  para as  aplicações  
+  solucionarem  determinados  problemas  e,  também,  a  necessidade  de resolver problemas mais complexos de maior dimensão.\cite{Andrews}.
+  Inicialmente,  motivada  pela  resolução  de  problemas com  grande  relevância científica e econômica, denominadosGrand Challenge Problems(GCPs) .\cite{Stout}
+  iniciou-se  a  utilização  de  técnicas  de  processamento  paralelo  e  distribuído. Atualmente,  diversas  aplicações  exigem  ou  requerem  um  alto  poder  
+  de  computação, para desta forma, efetuar o processamento de grandes quantidades de informações. O  presente  artigo  busca  demonstrar  a  aplicação  de dois problemas sendo resolvidoscom
+  o uso de programação paralela,utilizando diferentes número de threads.Apesar de ser apenas uma avaliação para problemas que, de certa forma, em exigência de  processamento,  são  muito  inferiores  aos  que  temos  atualmente  para  resolução  de problemas  complexos  e  que  fazem  uso  de  programação  paralela,  como  por  exemplo, análise de fenômenos climáticos (movimento das placas tectônicas), físicos (órbita dos planetas),  químicos  (reações  nucleares),  dentre  outros  tantos,  a  avaliação  feita  neste trabalho,  permite  ao  leitor  uma  noção  do  quão  importante  é  a  utilização  da  técnica  de processamento paralelo e distribuído.
+
+\section{O Problema} \label{sec:problem}
+
+  Durante séculos, os objetos e os conceitos da filosofia e da geometria euclidiana foram considerados como os que melhor descreviam o mundo em que vivemos.
+  A descoberta de geometrias não-euclidianas introduziu novos objetos que representam certos fenômenos do Universo, tal como se passou com os fractais.
+  Assim, considera-se hoje que tais objetos retratam formas e fenômenos da Natureza.
+
+  Fractal pela definição é um padrão que nunca acaba, ou seja, infinito. Um fractal também é um padrão infinitamente complexo e auto-similar através de diferentes escalas.
+  Eles são criados , repetindo um processo simples repetidamente em um loop de feedback contínuo
+\section{Conceitos}
+\subsection{Programação Paralela}
+\subsection{Programação Concorrente}
+\subsection{C++11}
+\subsection{openmp}
+\section{Sections and Paragraphs}
+
+\section{Metodologia}\label{sec:methodology}
+
+\section{Resultados}
+
+
+\section{Conclusão}
+
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
