@@ -52,10 +52,13 @@
   o uso de programação paralela. Apesar de ser apenas uma avaliação para um problema que, de certa forma, demanda menor quantidade de processamento que os problemas complexos que temos
   atualmente, e que fazem uso de programação paralela, como por exemplo, análise de fenômenos climáticos (movimento das placas tectônicas), físicos (órbita dos planetas), 
   químicos (reações  nucleares), dentre outros tantos.
-  Este artigo tem como objetivo então tratar sobre a implementação de fractais utilizando as ferramentas C++11 e OpenMP, e está dividido nas seguintes sessões: Introdução, O Problema, onde será abordado um pouco sobre que é Fractal e suas características, Conceitos, onde será 
-  falado sobre os principais conceitos abordados pelo artigo, para melhor entendimento da parte do leitor, Metodologia, onde será descrito a forma como o problema foi 
-  abordado e as soluções tentadas, Resultados onde serão apresentados alguns dos resultados obtidos nos testes realizados e por fim, mas não menos importante a Conclusão, 
-  onde será então discutido o desfecho do artigo e conclusão do grupo sobre o trabalho e resultados obtidos.
+  Este artigo tem como objetivo então tratar sobre a implementação de fractais utilizando as ferramentas C++11 e OpenMP, e está dividido nas seguintes sessões:
+  \ref{sec:Intro} Introdução,
+  \ref{sec:Problem} Problema, onde será abordado um pouco sobre que é Fractal e suas características,
+  \ref{sec:Conc} Conceitos, onde será falado sobre os principais conceitos abordados pelo artigo, para melhor entendimento da parte do leitor, 
+  \ref{sec:Methodology} Metodologia, onde será descrito a forma como o problema foi abordado e as soluções tentadas,
+  \ref{sec:Results} Resultados onde serão apresentados alguns dos resultados obtidos nos testes realizados e por fim, mas não menos importante 
+  \ref{sec:Conclusion} Conclusão, onde será então discutido o desfecho do artigo e conclusão do grupo sobre o trabalho e resultados obtidos.
 
 \section{Problema}\label{sec:Problem}
   A teoria fractal tem sua origem na descoberta do matemático alemão Karl Weierstrass que
@@ -183,8 +186,8 @@ OpenMP ARb (Architecture Review Board), que possui diversas empresas, dentre ela
 \section{Metodologia}\label{sec:Methodology}
 Conforme especificado na sessão \ref{sec:Intro}, este trabalho foi realizado utilizando o algoritmo de Mandelbrot para problemas de Fractais, o qual foi
 desenvolvido nas ferramentas C++11, OpenMP e com programação sequencial.
-Salvo a programação sequencial, ambas as outras ferramentas utilizaram de um número de threads entre um e oito, executados dez (10) vezes com cada número de threads.
-Ou seja, para um teste com uma (1) thread, foram realizados dez (10) testes, e assim sucessivamente até os dez testes com oito threads.
+Salvo a programação sequencial, ambas as outras ferramentas utilizaram de um número de \textit{threads} entre um e oito, executados dez (10) vezes com cada número de \textit{threads}.
+Ou seja, para um teste com uma (1) thread, foram realizados dez (10) testes, e assim sucessivamente até os dez testes com oito \textit{threads}.
 A máquina utilizada para realizar todos os testes, foi a seguinte:
 CPU:Amd Phenon X6 1055T 2.8Ghz, 6 Pocessadores, 6M cache L3, 512K cache L2, 64K cache L1, mem Ram: 8G DDR3 1066.
 Foi calculado o \textit{Speed Up} através da seguinte formula:
@@ -194,10 +197,195 @@ $Speedup = \frac{X}{Y}$
 Onde X é o tempo sequencial, e Y é o tempo paralelo, para definir o tempo médio de execução.
 Assim então seguimos para a sessão \ref{sec:Results}.
 \section{Resultados}\label{sec:Results}
+Após a realização dos testes, foi então gerado os gráficos, como mostra a Figura \ref{fig:exampleFig4}, Figura \ref{fig:exampleFig5}, Figura \ref{fig:exampleFig6},  Figura \ref{fig:exampleFig7}
+onde podemos ver a Eficiência medida pela divisão do \textit{SpeedUp} pelo número de \textit{threads} utilizado, e o número de \textit{threads} no eixo X.
+
+Apesar do grafico de \textit{SpeedUp} nos dizer que estamos ganhando desempenho, e estamos realmente, não é a melhor métrica pois através do 
+Gráfico de Eficiência podemos ver que estamos subaproveitando recursos, ou seja temos mais capacidade de paralelismo do que estamos utilizando. 
+
+Isso é normal, pois vários fatores que influenciam no desempenhos como: Cache, Barramento, Memória e até mesmo número de \textit{threads}, pois a partir de certo ponto,
+deve-se analisar os custos da criação de novas \textit{threads} e em nível mais critico, se o numero de \textit{threads} for muito grande, acabará por serializar a execução. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \ \\ \\ \\
+
+\begin{figure}[H]
+ 
+ \includegraphics{eficiencia1.PNG}
+ \caption{Eficienca 800x600}
+ \label{fig:exampleFig4}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+ 
+ \includegraphics{eficiencia2.PNG}
+ \caption{Eficienca para imagens HD}
+ \label{fig:exampleFig5}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+ 
+ \includegraphics{escalabilidade1.PNG}
+ \caption{Escalabilidade 800x600}
+ \label{fig:exampleFig6}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+ \includegraphics{escalabilidade2.PNG}
+ \caption{Eficienca para imagens HD}
+ \label{fig:exampleFig7}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Conclusão}\label{sec:Conclusion}
-
+Os graficos estão escondendo porque não usamos mais de oito \textit{threads} o comportamento das curvas diz que se aumentássemos o número de \textit{threads} C++11 começa a ganhar desempenho e OpemMp a perder, pode estar relacionando ao custo de estanciar um \textit{thread} em c++11 ser mais leve do que iniciar uma tarefa do OpemMp. 
+Observandos os graficos de tempo C++11 em 8 \textit{threads} esta com a curva indo para baixo, mostrando uma tendencia a diminuir o tempo, Ja OpemMp ja tende a subir ou ficar constante.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
