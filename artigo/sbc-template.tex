@@ -35,8 +35,8 @@
   Este artigo tem como objetivo apresentar uma solução para o problema de fractal (\textit{fractus} do latim, fração, quebrado) de forma paralela nas linguagens C++11 e OpenMP, 
   bem como uma abordagem sequencial para mostrar a diferença e importância de casos paralelisados.
   
-  Este artigo será composto de uma sessão de introdução para apresentar o problema em si, logo depois serão apresentadas ideias e soluçãos, e por fim 
-  resultados obtidos ao longo do trabalho. E após isso, conclusões serão debatidas.
+  Este artigo será composto de uma sessão de introdução para apresentar o problema em si, logo após serão apresentadas ideias e soluções, 
+  e por fim resultados obtidos ao longo do trabalho serão debatidos.
   
 \end{resumo}
 
@@ -242,11 +242,10 @@ deve-se analisar os custos da criação de novas \textit{threads} e em nível mais 
 
 \section{Conclusão}\label{sec:Conclusion}
 Após então terminarmos os testes, concluímos que OpemMp por ter uma caracteristica de "Identificar" os setores paralelizaveis, conseguiu ter uma eficiência melhor que C++11 
-que é necessário ao programador identificar os pontos de paralização e aplicar as técnicas nos locais exatos. Também os graficos estão escondendo porque não usamos mais
-de oito \textit{threads}, mas o comportamento das curvas diz que se aumentássemos o número de \textit{threads} C++11 começaria a ganhar desempenho e OpemMp a perder, 
+que é necessário ao programador identificar os pontos de paralização e aplicar as técnicas nos locais exatos. Também os graficos estão escondendo uma ilusão de que 
+quyanto mais \textit{threads} melhor, porque não usamos mais de oito \textit{threads}, mas o comportamento das curvas diz que se aumentássemos o número de \textit{threads} C++11 começaria a ganhar desempenho e OpemMp a perder, 
 pode estar relacionando ao custo de estanciar um \textit{thread} em c++11 ser mais leve do que iniciar uma tarefa do OpemMp. 
-Observamos que os graficos de tempo C++11 em 8 \textit{threads} esta com a curva indo para baixo, mostrando uma tendencia a diminuir o tempo,
-Ja OpemMp o gráfico tende a subir ou ficar constante.
+
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
