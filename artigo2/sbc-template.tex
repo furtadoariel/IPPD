@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc}  
+
+     
+\sloppy
+
+\title{Instalação e Caso de Uso da Ferramenta \textit{Hadoop}}
+
+\author{Ariel F. Azevedo\inst{1}, Rodrigo B. Acosta\inst{2}, Rodrigo M. Duarte\inst{1} }
+
+
+\address{Laboratório de Sistemas Paralelos e Ubíquos - Universidade Federal de Pelotas\\
+  -- Pelotas -- RS -- Brasil
+\nextinstitute
+  Centro de Desenvolvimento e Tecnologia - Universidade Federal de Pelotas\\
+  -- Pelotas -- RS -- Brasil
+  \email{\{afazevedo,rbacosta, rmduarte\}@inf.ufpel.edu.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  This article describes how to install the Hadoop tool, showing step by step of the all things we've made
+\end{abstract}
+     
+\begin{resumo} 
+Este artigo descreve como instalar a ferramenta Hadoop , mostrando passo a passo de todas as coisas que fizemos
+\end{resumo}
+%http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php
+
+\section{Introdução}\label{sec:intro}
+O projeto do \textit{Apache Hadoop} desenvolve um \textit{software} para computação confiável, escalonável e distribuída. A biblioteca dessa ferramenta é um \textit{framework} que permite processamento distribuído de grandes quantidades de dados através de \textit{clusters} de computação usando modelos simples de programação. Ele é projetado para escalonar a partir de um único servidor para milhares de máquinas , cada um oferecendo computação e armazenamento local.\\
+Esse artigo tem como objetivo mostrar como foi feito a instalação passo a passo dessa ferramenta em uma máquina, bem como seus requisitos, e foi projetado da seguinte forma: na Sessão \ref{sec:intro} foi feito uma introdução ao trabalho, na Sessão \ref{sec:met} foi mostrado a Metodologia usada no trabalho, na Sessão \ref{sec:inst} foi mostrado o passo a passo da instalação da ferramenta.
+
+
+\section{Metodologia} \label{sec:met}
+Esta sessão tem como objetivo mostrar a metodologia, com intuito de informar o leitor a máquina onde a instalação foi feita, bem como os requisitos necessários e quais as dificuldades da instalação.
+\subsection{Máquina}
+A estação onde foi feita a instalação possui a seguinte configuração:
+\begin{itemize}
+ \item Processador Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz, com cache L1 de 8Mb
+ \item Memória RAM DDR3 de 4Gb
+ \item Sistema Operacional Ubuntu 14.04 AMD64 bits
+ \item Disco Rígido de 1Tb
+ %model name	: Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz
+%stepping	: 7
+%microcode	: 0x14
+%cpu MHz		: 1743.164
+%cache size	: 8192 KB
+
+\end{itemize}
+
+\subsection{Requisitos}\label{sub:requires}
+Os seguintes requisitos são necessários para fazer a instalação:
+\begin{itemize}
+ \item SSH instalado e configurado
+ \item Java da Oracle\footnote[1]{Em distribuições Linux não pode ser a opção OpenJDK}
+
+\end{itemize}
+
+\subsection{Dificuldades}
+Para conseguir efetuar a instalação com maior facilidade em distribuições Linux, é preciso um nível razoável de conhecimento em \textit{shell}, pois como tudo é feito por linha de comando, caso haja algum problema é necessário conhecimento para facilitar na instalação.
+
+
+\section{Instalação}\label{sec:inst}
+Essa sessão tratará do passo a passo para a instalação, começando mostrando como instalar e configurar os requisitos mostrados na Subsessão \ref{sub:requires}.
+\subsection{Instalação de Requisitos}\label{sub:instRequires}
+\subsubsection{SSH}
+\begin{itemize}
+
+ \item \textbf{\textit{sudo apt-get install openssh-server}}
+ \item \textbf{\textit{ssh-keygen -t rsa -P ''''}}
+  \item \textbf{\textit{\$HOME/.ssh/id\_rsa.pub $>>$ \$HOME/ssh/authorized\_keys}}
+ 
+\end{itemize}
+
+
+\subsubsection{Oracle Java}
+
+\begin{itemize}
+
+ \item \textbf{\textit{sudo apt-get purge openjdk*}}
+ \item \textbf{\textit{sudo add-apt-repository ppa:webupd8team/java}}
+ \item \textbf{\textit{sudo apt-get update}}
+ \item \textbf{\textit{sudo apt-get install oracle-java8-installer}}
+ 
+\end{itemize}
+
+\subsection{Instalação do \textit{Hadoop}}\label{sub:instHadoop}
+\subsubsection{\textit{Download, extração e movimentação do pacote}}
+\begin{itemize}
+
+ \item \textit{wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz}\footnote[1]{Download do Pacote}
+ \item tar xvzf hadoop-2.6.0.tar.gz\footnote[2]{Extração do pacote}
+ \item sudo mv * /usr/local/hadoop \footnote[3]{Substitua * pelo nome da pasta do Hadoop}
+ \item sudo chown -R user:group /usr/local/hadoop \footnote[4]{substitua user e group pelos respectivos usuario e grupo}
+ 
+\end{itemize}
+
+\subsection{Arquivos de Configuração}
+
+Os Arquivos a seguir serão modificados para completar a configuração do \textit{Hadoop}:
+\begin{enumerate}
+ \item \texttt{\~{}} /.bashrc\label{item1}
+ \item /usr/local/hadoop/etc/hadoop/hadoop-env.sh\label{item2}
+ \item /usr/local/hadoop/etc/hadoop/core-site.xml\label{item3}
+ \item /usr/local/hadoop/etc/hadoop/mapred-site.xml.template\label{item4}
+ \item /usr/local/hadoop/etc/hadoop/hdfs-site.xml\label{item5}
+\end{enumerate}
+
+%fazer print das imagens do site para colocar aqui.
+\subsubsection{bashrc}
+O Comando a seguir mostrará qual o caminho do java, isso é importante, pois esse caminho utilizaremos em alguns dos arquivos de configuração.
+
+\textit{update-alternatives --config java}
+A Figura \ref{fig:exampleFig} mostra como fica o arquivo ''\texttt{\~{}}/.bashrc''
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.5\textwidth]{bashrc.png}
+\caption{O que adicionar no \texttt{\~{}} /.bashrc}
+\label{fig:exampleFig}
+\end{figure}
+
+Note que ''hduser'' é o usuário que foi usado para os testes, e que ''JAVA_HOME'' é a saída do comando executado anteriormente.
+
+\subsubsection{hadoop-env.sh}
+\section{Figures and Captions}\label{sec:figs}
+
+
+Figure and table captions should be centered if less than one line
+(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
+both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
+be Helvetica, 10 point, boldface, with 6 points of space before and after each
+caption.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.5\textwidth]{fig1.jpg}
+\caption{A typical figure}
+\label{fig:exampleFig1}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{fig2.jpg}
+\caption{This figure is an example of a figure caption taking more than one
+  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
+\label{fig:exampleFig2}
+\end{figure}
+
+In tables, try to avoid the use of colored or shaded backgrounds, and avoid
+thick, doubled, or unnecessary framing lines. When reporting empirical data,
+do not use more decimal digits than warranted by their precision and
+reproducibility. Table caption must be placed before the table (see Table 1)
+and the font used must also be Helvetica, 10 point, boldface, with 6 points of
+space before and after each caption.
+
+\begin{table}[ht]
+\centering
+\caption{Variables to be considered on the evaluation of interaction
+  techniques}
+\label{tab:exTable1}
+\includegraphics[width=.7\textwidth]{table.jpg}
+\end{table}
+
+\section{Images}
+
+All images and illustrations should be in black-and-white, or gray tones,
+excepting for the papers that will be electronically available (on CD-ROMs,
+internet, etc.). The image resolution on paper should be about 600 dpi for
+black-and-white images, and 150-300 dpi for grayscale images.  Do not include
+images with excessive resolution, as they may take hours to print, without any
+visible difference in the result. 
+
+\section{References}
+
+Bibliographic references must be unambiguous and uniform.  We recommend giving
+the author names references in brackets, e.g. \cite{knuth:84},
+\cite{boulic:91}, and \cite{smith:99}.
+
+The references must be listed using 12 point font size, with 6 points of space
+before each reference. The first line of each reference should not be
+indented, while the subsequent should be indented by 0.5 cm.
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
